@@ -93,12 +93,16 @@ class UserController:
             password =password,
             role_id = 2
         )
-
+    @classmethod
+    def get(cls):
+        return Users.select().order_by(Users.login)
 
 if __name__ == "__main__":
     # UserController.update(1,'admin','admin1')
     # UserController.update_all(2,fullname = 'User1212', password = '1111111')
-    print(UserController.show_login('admin1'))
-    UserController.add('user2','user2','user2')
+    # print(UserController.show_login('admin1'))
+    # UserController.add('user2','user2','user2')
+    for user in UserController.get():
+        print(user.login)
 
 
