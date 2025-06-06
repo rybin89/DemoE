@@ -11,6 +11,7 @@ class Users(Model):
     ban = BooleanField(default=False)
     first_auth = BooleanField(default=True)
     created = DateTimeField(default=datetime.now())
+    last_auth = DateTimeField(default=None)
     fullname = CharField()
     role_id = ForeignKeyField(Roles)
 
